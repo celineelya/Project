@@ -11,6 +11,12 @@ object Ex1 {
       }
       loop(this, Nil)
     }
+
+    override def toString = this match {
+      case Zero(x) => "0"+x.toString
+      case One(x) => "1"+x.toString
+      case Nil => ""
+    }
   }
   case class Zero(y: BinaryNumber) extends BinaryNumber
   case class One(y: BinaryNumber) extends BinaryNumber
@@ -48,6 +54,8 @@ object Ex1 {
   def main(args: Array[String]): Unit = {
     val i = fromBinaryToInt(One(One(Zero(Nil))))
     val b = fromIntToBinary(4)
+    val c = fromIntToBinary(5)
     println(b)
+    println(c)
   }
 }
